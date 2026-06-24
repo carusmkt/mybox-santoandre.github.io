@@ -741,7 +741,8 @@
             margin-bottom: 18px;
         }
 
-        .ft-links a {
+        .ft-links a,
+        .ft-links button {
             font-size: 11px;
             font-weight: 400;
             letter-spacing: 1px;
@@ -750,7 +751,8 @@
             transition: color .3s;
         }
 
-        .ft-links a:hover {
+        .ft-links a:hover,
+        .ft-links button:hover {
             color: var(--caramel);
         }
 
@@ -758,6 +760,103 @@
             font-size: 11px;
             font-weight: 300;
             color: rgba(202, 196, 183, .45);
+        }
+
+        /* ═══════════════════ PRIVACY MODAL ═══════════════════ */
+        .privacy-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 300;
+            background: rgba(0, 0, 0, .7);
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity .3s;
+            padding: 24px;
+        }
+
+        .privacy-modal.open {
+            display: flex;
+            opacity: 1;
+        }
+
+        .privacy-content {
+            background: var(--white);
+            max-width: 600px;
+            width: 100%;
+            border-radius: 12px;
+            padding: 40px;
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            transform: translateY(20px);
+            transition: transform .3s;
+        }
+
+        .privacy-modal.open .privacy-content {
+            transform: translateY(0);
+        }
+
+        .privacy-content h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--brown);
+            margin-bottom: 20px;
+        }
+
+        .privacy-text {
+            overflow-y: auto;
+            margin-bottom: 24px;
+            padding-right: 12px;
+        }
+
+        .privacy-text::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .privacy-text::-webkit-scrollbar-track {
+            background: var(--beige);
+            border-radius: 4px;
+        }
+
+        .privacy-text::-webkit-scrollbar-thumb {
+            background: var(--beige-gray);
+            border-radius: 4px;
+        }
+
+        .privacy-text h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--brown);
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+
+        .privacy-text p {
+            font-size: 14px;
+            font-weight: 300;
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .privacy-btn {
+            align-self: flex-end;
+            padding: 12px 30px;
+            border-radius: 8px;
+            background: var(--terracotta);
+            color: var(--white);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: background .3s;
+        }
+
+        .privacy-btn:hover {
+            background: var(--brown);
         }
 
         /* ═══════════════════ RESPONSIVE ═══════════════════ */
@@ -890,6 +989,10 @@
             .lb-img {
                 max-width: 94vw;
                 max-height: 78vh;
+            }
+
+            .privacy-content {
+                padding: 24px;
             }
         }
 
@@ -1157,6 +1260,7 @@
                 <a href="#inicio">Início</a>
                 <a href="#projetos">Projetos</a>
                 <a href="#sobre">Sobre</a>
+                <button type="button" id="open-privacy">Política de Privacidade</button>
                 <a href="https://wa.me/551144323323?text=Ol%C3%A1%2C%20vi%20seu%20an%C3%BAncio%20no%20Google%20e%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es"
                     target="_blank" rel="noopener">WhatsApp</a>
             </div>
@@ -1171,6 +1275,27 @@
         <button class="lb-arr lb-next" id="lbn" aria-label="Próximo">&#8250;</button>
         <img class="lb-img" id="lbi" src="" alt="">
         <div class="lb-cap" id="lbcap"></div>
+    </div>
+
+    <!-- PRIVACY POLICY MODAL -->
+    <div class="privacy-modal" id="privacy-modal">
+        <div class="privacy-content">
+            <h2>Política de Privacidade</h2>
+            <div class="privacy-text">
+                <p>Nós valorizamos a sua privacidade e estamos comprometidos em proteger os seus dados pessoais. Esta política descreve como coletamos, usamos e protegemos suas informações de acordo com as exigências do Google e as leis de proteção de dados.</p>
+                <h3>1. Informações Coletadas</h3>
+                <p>Coletamos informações que você nos fornece voluntariamente ao preencher formulários de contato ou ao entrar em contato conosco via WhatsApp. Isso pode incluir seu nome, telefone e email.</p>
+                <h3>2. Uso das Informações</h3>
+                <p>Suas informações são utilizadas exclusivamente para fins de atendimento ao cliente, orçamentos e para melhorar nossos serviços. Não compartilhamos, vendemos ou alugamos seus dados a terceiros.</p>
+                <h3>3. Cookies e Tecnologias de Rastreamento</h3>
+                <p>Nosso site pode utilizar cookies para melhorar a experiência do usuário e para métricas de desempenho. Ao continuar navegando, você concorda com o uso de cookies.</p>
+                <h3>4. Segurança</h3>
+                <p>Adotamos medidas de segurança para proteger suas informações pessoais contra acessos não autorizados, alterações ou destruição.</p>
+                <h3>5. Seus Direitos</h3>
+                <p>Você tem o direito de solicitar o acesso, a correção ou a exclusão de seus dados a qualquer momento. Para isso, entre em contato conosco através de nossos canais de atendimento.</p>
+            </div>
+            <button class="btn privacy-btn" id="close-privacy">Entendi</button>
+        </div>
     </div>
 
     <script>
@@ -1233,6 +1358,31 @@
                 var d = tx - e.changedTouches[0].screenX;
                 if (Math.abs(d) > 50) nav(d > 0 ? 1 : -1);
             }, { passive: true });
+
+            /* Privacy Modal */
+            var pBtn = document.getElementById('open-privacy');
+            var pModal = document.getElementById('privacy-modal');
+            var pClose = document.getElementById('close-privacy');
+            
+            if (pBtn && pModal && pClose) {
+                pBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    pModal.classList.add('open');
+                    document.body.style.overflow = 'hidden';
+                });
+                
+                pClose.addEventListener('click', function () {
+                    pModal.classList.remove('open');
+                    document.body.style.overflow = '';
+                });
+                
+                pModal.addEventListener('click', function (e) {
+                    if (e.target === pModal) {
+                        pModal.classList.remove('open');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
 
             /* Scroll reveal */
             var ro = new IntersectionObserver(function (entries) {
