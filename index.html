@@ -124,6 +124,7 @@
         .img-wrap {
             position: relative;
             overflow: hidden;
+            border-radius: 10px;
             background: linear-gradient(135deg, var(--beige) 0%, var(--beige-gray) 100%);
         }
 
@@ -425,6 +426,119 @@
             color: var(--gray);
         }
 
+        /* ═══════════════════ GARANTIA ═══════════════════ */
+        .guar {
+            background: var(--brown);
+            padding: 100px 0;
+            color: var(--white);
+        }
+
+        .guar-g {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .guar-c .label {
+            color: var(--caramel);
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+        }
+
+        .guar h2 {
+            font-size: clamp(28px, 3.5vw, 48px);
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--white);
+        }
+
+        .guar h2 em {
+            font-style: italic;
+            color: var(--caramel);
+            font-weight: 300;
+        }
+
+        .guar p {
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1.8;
+            color: #d8d8d8;
+            margin-bottom: 40px;
+        }
+
+        .guar-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px 30px;
+            margin-bottom: 40px;
+        }
+
+        .guar-list div {
+            font-size: 14px;
+            font-weight: 300;
+            color: #d8d8d8;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .guar-list div::before {
+            content: "";
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--caramel);
+        }
+
+        .guar-img {
+            position: relative;
+        }
+
+        .guar-img img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .guar-badge {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: var(--caramel);
+            color: var(--brown);
+            padding: 24px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            border-radius: 10px;
+        }
+
+        .guar-badge span:first-child {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .guar-badge span:last-child {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 900px) {
+            .guar-g {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .guar-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* ═══════════════════ GALLERY ═══════════════════ */
         .gallery {
             padding: 100px 0;
@@ -708,6 +822,122 @@
         .btn-w:hover {
             background: var(--caramel);
             transform: translateY(-1px);
+        }
+
+        /* ═══════════════════ DEPOIMENTOS ═══════════════════ */
+        .testim {
+            background: var(--beige);
+            padding: 80px 0;
+            color: var(--gray);
+        }
+
+        .testim-hdr {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .testim-title {
+            font-size: clamp(18px, 2vw, 22px);
+            font-weight: 400;
+            color: var(--gray);
+        }
+
+        .testim-badge {
+            background: var(--white);
+            padding: 10px 20px;
+            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+
+        .testim-badge span {
+            margin-left: 4px;
+        }
+
+        .testim-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .testim-card {
+            background: var(--white);
+            padding: 35px 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+
+        .testim-stars {
+            display: flex;
+            gap: 3px;
+            margin-bottom: 24px;
+        }
+
+        .testim-card p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--gray);
+            margin-bottom: 30px;
+            flex-grow: 1;
+        }
+
+        .testim-author {
+            border-top: 1px solid rgba(0,0,0,0.06);
+            padding-top: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .testim-author strong {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--brown);
+        }
+
+        .testim-author span {
+            font-size: 11px;
+            color: #888;
+        }
+
+        .testim-btn-wrap {
+            text-align: center;
+        }
+
+        .testim-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 34px;
+            border: 1px solid rgba(0,0,0,0.15);
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--brown);
+            transition: all 0.3s;
+        }
+
+        .testim-btn:hover {
+            background: var(--brown);
+            color: var(--white);
+            border-color: var(--brown);
+        }
+
+        @media (max-width: 900px) {
+            .testim-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* ═══════════════════ FOOTER ═══════════════════ */
@@ -1141,11 +1371,7 @@
     <header id="hdr">
         <div class="container hdr">
             <a href="#inicio" class="logo">
-                <div class="logo-txt">
-                    <strong>MyBox</strong>
-                    <span>Concept Santo André</span>
-                    <small>- Unidade operada por The House Planejados Ltda</small>
-                </div>
+                <img src="img/logo.png" alt="MyBox Logo" style="max-height: 52px; width: auto;">
             </a>
             <nav>
                 <a href="#inicio">Início</a>
@@ -1174,7 +1400,7 @@
                     <a href="https://wa.me/551144323323?text=Ol%C3%A1%2C%20vi%20seu%20an%C3%BAncio%20no%20Google%20e%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es" target="_blank" class="btn">Comece seu projeto</a>
                 </div>
                 <div class="hero-img img-wrap rv">
-                    <img src="https://images.pexels.com/photos/9757618/pexels-photo-9757618.png?auto=compress&cs=tinysrgb&w=1200"
+                    <img src="img/cozinha site 1.png"
                         alt="Cozinha de alto padrão com marcenaria planejada, iluminação LED e acabamento sofisticado">
                 </div>
             </div>
@@ -1186,7 +1412,7 @@
         <div class="container">
             <div class="about-g">
                 <div class="about-img img-wrap rv">
-                    <img src="https://images.pexels.com/photos/7166645/pexels-photo-7166645.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                    <img src="img/cozinha2.webp"
                         alt="Ambiente integrado com cozinha gourmet, sala de jantar e sala de estar em projeto contemporâneo">
                 </div>
                 <div class="about-c rv">
@@ -1212,85 +1438,116 @@
 
             <div class="gg" id="gg">
 
-                <div class="gi img-wrap rv" data-cat="cozinhas">
-                    <img src="https://images.pexels.com/photos/9757618/pexels-photo-9757618.png?auto=compress&cs=tinysrgb&w=800"
-                        alt="Cozinha de alto padrão com marcenaria planejada, iluminação LED e acabamento premium"
-                        loading="lazy">
-                    <div class="ov"><span>Cozinha</span></div>
-                </div>
 
                 <div class="gi img-wrap rv" data-cat="cozinhas">
-                    <img src="https://images.pexels.com/photos/7045356/pexels-photo-7045356.jpeg?auto=compress&cs=tinysrgb&w=800"
-                        alt="Cozinha moderna com bancada em madeira e armários planejados" loading="lazy">
+                    <img src="img/cozinhas.webp"
+                        alt="Cozinha planejada moderna" loading="lazy">
                     <div class="ov"><span>Cozinha</span></div>
                 </div>
 
                 <div class="gi img-wrap rv" data-cat="cozinhas">
-                    <img src="https://images.pexels.com/photos/20348123/pexels-photo-20348123.jpeg?auto=compress&cs=tinysrgb&w=800"
-                        alt="Cozinha com ilha, bancada em mármore e detalhes dourados" loading="lazy">
+                    <img src="img/cozinhaazul.webp"
+                        alt="Cozinha azul com armários planejados" loading="lazy">
                     <div class="ov"><span>Cozinha</span></div>
                 </div>
 
                 <div class="gi img-wrap rv" data-cat="cozinhas">
-                    <img src="https://images.pexels.com/photos/6969875/pexels-photo-6969875.jpeg?auto=compress&cs=tinysrgb&w=800"
-                        alt="Cozinha sofisticada com armários planejados e bancada em pedra" loading="lazy">
+                    <img src="img/cozinha2.webp"
+                        alt="Cozinha planejada" loading="lazy">
                     <div class="ov"><span>Cozinha</span></div>
                 </div>
 
-                <div class="gi img-wrap rv" data-cat="cozinhas">
-                    <img src="https://images.pexels.com/photos/6908565/pexels-photo-6908565.jpeg?auto=compress&cs=tinysrgb&w=800"
-                        alt="Cozinha com acabamento em madeira e bancada integrada" loading="lazy">
-                    <div class="ov"><span>Cozinha</span></div>
-                </div>
-
-                <div class="gi img-wrap rv" data-cat="cozinhas">
-                    <img src="https://images.pexels.com/photos/8089079/pexels-photo-8089079.jpeg?auto=compress&cs=tinysrgb&w=800"
-                        alt="Cozinha espaçosa com banquetas e armários em madeira" loading="lazy">
-                    <div class="ov"><span>Cozinha</span></div>
-                </div>
-
-                <div class="gi img-wrap rv" data-cat="cozinhas">
-                    <img src="https://images.pexels.com/photos/7005291/pexels-photo-7005291.jpeg?auto=compress&cs=tinysrgb&w=800"
-                        alt="Cozinha planejada minimalista com armários até o teto" loading="lazy">
-                    <div class="ov"><span>Cozinha</span></div>
-                </div>
-
-                <div class="gi img-wrap rv" data-cat="cozinhas">
-                    <img src="https://images.pexels.com/photos/7166645/pexels-photo-7166645.jpeg?auto=compress&cs=tinysrgb&w=800"
-                        alt="Espaço integrado com cozinha gourmet e sala de jantar" loading="lazy">
-                    <div class="ov"><span>Cozinha</span></div>
-                </div>
-
-                <div class="gi img-wrap rv" data-cat="salas">
-                    <img src="https://images.pexels.com/photos/6265836/pexels-photo-6265836.jpeg?auto=compress&cs=tinysrgb&w=800"
-                        alt="Painel de TV com acabamento em mármore e painéis em madeira" loading="lazy">
-                    <div class="ov"><span>Cozinha</span></div>
-                </div>
-
-                <div class="gi img-wrap rv" data-cat="salas">
-                    <img src="https://images.pexels.com/photos/6480198/pexels-photo-6480198.jpeg?auto=compress&cs=tinysrgb&w=800"
-                        alt="Sala com painel home theater e estante decorativa" loading="lazy">
-                    <div class="ov"><span>Quarto</span></div>
-                </div>
-
-                <div class="gi img-wrap rv" data-cat="salas">
-                    <img src="https://images.pexels.com/photos/11295880/pexels-photo-11295880.jpeg?auto=compress&cs=tinysrgb&w=800"
-                        alt="Sala de jantar com buffet em madeira e iluminação elegante" loading="lazy">
-                    <div class="ov"><span>Cozinha</span></div>
+                <div class="gi img-wrap rv" data-cat="banheiros">
+                    <img src="img/banheiro.webp"
+                        alt="Banheiro planejado moderno" loading="lazy">
+                    <div class="ov"><span>Banheiro</span></div>
                 </div>
 
                 <div class="gi img-wrap rv" data-cat="dormitorios">
-                    <img src="https://images.pexels.com/photos/7535012/pexels-photo-7535012.jpeg?auto=compress&cs=tinysrgb&w=800"
-                        alt="Dormitório com guarda-roupa planejado e cabeceira estofada" loading="lazy">
-                    <div class="ov"><span>Dormitório</span></div>
+                    <img src="img/suitecasal.webp"
+                        alt="Suíte de casal planejada" loading="lazy">
+                    <div class="ov"><span>Suíte Casal</span></div>
+                </div>
+
+                <div class="gi img-wrap rv" data-cat="home-office">
+                    <img src="img/home-office.webp"
+                        alt="Home office com móveis planejados" loading="lazy">
+                    <div class="ov"><span>Home Office</span></div>
                 </div>
 
                 <div class="gi img-wrap rv" data-cat="dormitorios">
-                    <img src="https://images.pexels.com/photos/7060826/pexels-photo-7060826.jpeg?auto=compress&cs=tinysrgb&w=800"
-                        alt="Dormitório moderno com marcenaria planejada e closet integrado" loading="lazy">
-                    <div class="ov"><span>Dormitório</span></div>
+                    <img src="img/suitefilho.webp"
+                        alt="Suíte de filho planejada" loading="lazy">
+                    <div class="ov"><span>Suíte Filho</span></div>
                 </div>
 
+                <div class="gi img-wrap rv" data-cat="cozinhas">
+                    <img src="img/cozinhacompacta.webp"
+                        alt="Cozinha compacta com armários planejados" loading="lazy">
+                    <div class="ov"><span>Cozinha Compacta</span></div>
+                </div>
+
+                <div class="gi img-wrap rv" data-cat="dormitorios">
+                    <img src="img/quartobebe.webp"
+                        alt="Quarto de bebê planejado" loading="lazy">
+                    <div class="ov"><span>Quarto de Bebê</span></div>
+                </div>
+
+                <div class="gi img-wrap rv" data-cat="lavanderias">
+                    <img src="img/lavanderia.webp"
+                        alt="Lavanderia planejada" loading="lazy">
+                    <div class="ov"><span>Lavanderia</span></div>
+                </div>
+
+                <div class="gi img-wrap rv" data-cat="dormitorios">
+                    <img src="img/closet.webp"
+                        alt="Closet planejado moderno" loading="lazy">
+                    <div class="ov"><span>Closet</span></div>
+                </div>
+
+                <div class="gi img-wrap rv" data-cat="salas">
+                    <img src="img/salajantar.webp"
+                        alt="Sala de jantar" loading="lazy">
+                    <div class="ov"><span>Sala de Jantar</span></div>
+                </div>
+
+            </div>
+            <div style="text-align: center; margin-top: 40px;" class="rv">
+                <a href="https://wa.me/551144323323?text=Ol%C3%A1%2C%20vi%20seu%20an%C3%BAncio%20no%20Google%20e%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es" target="_blank" class="btn">Fazer meu Projeto</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- GARANTIA -->
+    <section class="guar" id="garantia">
+        <div class="container">
+            <div class="guar-g">
+                <div class="guar-c rv">
+                    <div class="label">GARANTIA</div>
+                    <h2>10 anos de garantia por<br>defeito de fabricação <em>da<br>madeira.</em></h2>
+                    <p>Trabalhamos com marcenaria de verdade, ferragens premium e um processo próprio de controle de qualidade. E, se acontecer qualquer problema de fabricação, nossa equipe cuida — sem burocracia.</p>
+                    
+                    <div class="guar-list">
+                        <div>Marcenaria com MDF selecionado</div>
+                        <div>Ferragens Blum, Hettich e similares</div>
+                        <div>Instalação por equipe própria</div>
+                        <div>Suporte pós-obra dedicado</div>
+                    </div>
+
+                    <a href="https://wa.me/551144323323?text=Ol%C3%A1%2C%20vi%20seu%20an%C3%BAncio%20no%20Google%20e%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es" target="_blank" class="btn" style="display: inline-flex; align-items: center;">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="margin-right: 8px;">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.487-1.761-1.66-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                        Quero conversar sobre meu projeto
+                    </a>
+                </div>
+                <div class="guar-img rv">
+                    <img src="img/cozinhaazul.webp" alt="Garantia de 10 anos MyBox Concept" loading="lazy">
+                    <div class="guar-badge">
+                        <span>MYBOX CONCEPT</span>
+                        <span>10 anos de garantia</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1346,6 +1603,77 @@
                     André.</p>
                 <a href="https://wa.me/551144323323?text=Ol%C3%A1%2C%20vi%20seu%20an%C3%BAncio%20no%20Google%20e%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es"
                     class="btn-w" target="_blank" rel="noopener">Falar com um especialista</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section class="testim" id="depoimentos">
+        <div class="container">
+            <div class="testim-hdr rv">
+                <div class="testim-title">Depoimentos de clientes MyBox Concept Santo André.</div>
+                <div class="testim-badge">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="var(--terracotta)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="var(--terracotta)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="var(--terracotta)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="var(--terracotta)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="var(--terracotta)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <span><strong>5,0</strong> &middot; Google Reviews</span>
+                </div>
+            </div>
+            
+            <div class="testim-grid">
+                <div class="testim-card rv">
+                    <div class="testim-stars">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="var(--terracotta)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="var(--terracotta)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="var(--terracotta)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="var(--terracotta)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="var(--terracotta)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <p>"Atendimento impecável do projeto à entrega. Nossa cozinha ficou exatamente como imaginamos e o acabamento é impressionante."</p>
+                    <div class="testim-author">
+                        <strong>Cliente MyBox</strong>
+                        <span>Avaliação Google &middot; 5,0</span>
+                    </div>
+                </div>
+
+                <div class="testim-card rv">
+                    <div class="testim-stars">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="var(--terracotta)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="var(--terracotta)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="var(--terracotta)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="var(--terracotta)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="var(--terracotta)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <p>"Aproveitaram cada centímetro do apartamento. A montagem foi rápida, limpa e no prazo combinado."</p>
+                    <div class="testim-author">
+                        <strong>Cliente MyBox</strong>
+                        <span>Avaliação Google &middot; 5,0</span>
+                    </div>
+                </div>
+
+                <div class="testim-card rv">
+                    <div class="testim-stars">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="var(--terracotta)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="var(--terracotta)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="var(--terracotta)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="var(--terracotta)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="var(--terracotta)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <p>"Recomendo de olhos fechados. Equipe atenciosa, projeto muito bem pensado e materiais de primeira."</p>
+                    <div class="testim-author">
+                        <strong>Cliente MyBox</strong>
+                        <span>Avaliação Google &middot; 5,0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testim-btn-wrap rv">
+                <a href="https://wa.me/551144323323?text=Ol%C3%A1%2C%20vi%20seu%20an%C3%BAncio%20no%20Google%20e%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es" target="_blank" class="testim-btn">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.487-1.761-1.66-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Quero fazer parte dessa lista
+                </a>
             </div>
         </div>
     </section>
